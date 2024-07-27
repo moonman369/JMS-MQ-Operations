@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JMS-MQ-Operations")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81d518ee7caaffb50d69922406800c3c1c26a2f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("JMS-MQ-Operations")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JMS-MQ-Operations")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

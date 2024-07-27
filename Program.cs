@@ -10,10 +10,10 @@ class Program
     static void Main(string[] args)
     {
         // Sending a message
-        SendMessage("Hello, JMS Queue!");
+        // SendMessage("Hello, JMS Queue!");
 
         // Receiving a message
-        ReceiveMessage();
+        ReceiveMessages();
     }
 
     static void SendMessage(string message)
@@ -79,6 +79,59 @@ class Program
                     Console.WriteLine("No message received.");
                 }
                 return message.Text;
+            }
+        }
+
+    }
+
+
+    static List<ITextMessage> ReceiveMessages()
+    {
+        // Create a connection factory
+        IConnectionFactory factory = new ConnectionFactory(BrokerUri);
+        List<ITextMessage> textMessages = new List<ITextMessage>();
+
+        // Create a connection
+        using (IConnection connection = factory.CreateConnection())
+        {
+            connection.Start();
+
+            // Create a session
+            using (ISession session = connection.CreateSession(AcknowledgementMode.AutoAcknowledge))
+            {
+                // Create the destination (queue)
+                IDestination destination = session.GetQueue(QueueName);
+
+                // Create a consumer
+                using IMessageConsumer consumer = session.CreateConsumer(destination);
+
+                while (true)
+                {
+                    IMessage message = consumer.Receive();
+                    if (message is ITextMessage textMessage)
+                    {
+                        Console.WriteLine("Received message: " + textMessage.Text);
+                        textMessages.Add(textMessage);
+                    }
+                    else if (message == null)
+                    {
+                        // No more messages in the queue
+                        break;
+
+                    }
+                }
+
+                // Receive the message
+                // ITextMessage message = consumer.Receive() as ITextMessage;
+                // if (message != null)
+                // {
+                //     Console.WriteLine($"Received message: {message.Text}");
+                // }
+                // else
+                // {
+                //     Console.WriteLine("No message received.");
+                // }
+                return textMessages;
             }
         }
 

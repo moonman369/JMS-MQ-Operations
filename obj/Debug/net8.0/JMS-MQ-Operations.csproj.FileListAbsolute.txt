@@ -17,3 +17,4 @@ E:\moonman\Azure\.NET-Dev\JMS-MQ-Operations\JMS-MQ-Operations\obj\Debug\net8.0\r
 E:\moonman\Azure\.NET-Dev\JMS-MQ-Operations\JMS-MQ-Operations\obj\Debug\net8.0\JMS-MQ-Operations.pdb
 E:\moonman\Azure\.NET-Dev\JMS-MQ-Operations\JMS-MQ-Operations\obj\Debug\net8.0\JMS-MQ-Operations.genruntimeconfig.cache
 E:\moonman\Azure\.NET-Dev\JMS-MQ-Operations\JMS-MQ-Operations\obj\Debug\net8.0\ref\JMS-MQ-Operations.dll
+E:\moonman\Azure\.NET-Dev\JMS-MQ-Operations\JMS-MQ-Operations\obj\Debug\net8.0\JMS-MQ-Operations.sourcelink.json
