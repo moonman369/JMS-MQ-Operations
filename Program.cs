@@ -107,7 +107,8 @@ class Program
 
                 while (true)
                 {
-                    IMessage message = consumer.Receive();
+                    IMessage message = consumer.Receive(TimeSpan.FromSeconds(10));
+                    // System.Console.WriteLine(message);
                     if (message is ITextMessage textMessage)
                     {
                         Console.WriteLine("Received message: " + textMessage.Text);
@@ -119,6 +120,12 @@ class Program
                         break;
 
                     }
+                    // else
+                    // {
+                    //     break;
+
+                    // }
+                    // connection.Close();
                 }
 
                 // Receive the message
